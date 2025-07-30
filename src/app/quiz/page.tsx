@@ -19,7 +19,11 @@ export default function QuizPage() {
     questions.forEach((q) => {
       const ans = answers[q.id];
       if (ans === "yes") {
-        q.type === "E" ? eScore++ : tScore++;
+        if (q.type === "E") {
+          eScore++;
+        } else {
+          tScore++;
+        }
       }
     });
 
